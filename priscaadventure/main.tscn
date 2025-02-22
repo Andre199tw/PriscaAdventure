@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c7fjtaxwwqv6a"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CardManager" type="Node2D" parent="."]
+
+[node name="Carta1" type="Node2D" parent="CardManager"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CardManager/Carta1"]
+
+[node name="Area2D" type="Area2D" parent="CardManager/Carta1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardManager/Carta1/Area2D"]
