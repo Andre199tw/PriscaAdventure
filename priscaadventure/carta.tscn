@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqncy0ma01jjk"]
+[gd_scene load_steps=5 format=3 uid="uid://bqncy0ma01jjk"]
 
+[ext_resource type="Script" path="res://carta.gd" id="1_03c74"]
 [ext_resource type="Texture2D" uid="uid://bwcr1ljbrx6ya" path="res://rantu.png" id="1_qfeqn"]
 [ext_resource type="Texture2D" uid="uid://cpbffx050ldqd" path="res://Tornioduva's basic card game asset pack/fantasy card/card fantasy golden.png" id="2_4th67"]
 
@@ -8,6 +9,7 @@ size = Vector2(145, 202)
 
 [node name="Carta1" type="Node2D"]
 position = Vector2(168, 146)
+script = ExtResource("1_03c74")
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(18, -22)
@@ -25,3 +27,6 @@ texture = ExtResource("2_4th67")
 visible = false
 position = Vector2(17.5, 4)
 shape = SubResource("RectangleShape2D_ysl6x")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
