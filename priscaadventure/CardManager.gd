@@ -1,6 +1,7 @@
 extends Node2D
 
 const COLLISION_MASK_CARD=1
+const COLLISION_MASK_CARD_SLOT=2
 var carta_sposta
 var dim_screen
 var is_hover_carta
@@ -34,7 +35,27 @@ func inizio_spostamento(carta):
 
 func fine_spostamento():
 	carta_sposta.scale=Vector2(1.2,1.2)
+	var slot_carta_trovata = spostamento_slot()
+	#se non c'è nessuna carta nello slot n allora la inserisce
+	if slot_carta_trovata and not slot_carta_trovata.carta_in_slot:
+		carta_sposta.position=slot_carta_trovata.position
+		carta_sposta.get_node("Area2D/CollisionShape2D").disabled=true
+		slot_carta_trovata.carta_in_slot=true
 	carta_sposta=null
+
+
+func spostamento_slot():
+	var space_state=get_world_2d().direct_space_state
+	var parameters = PhysicsPointQueryParameters2D.new()
+	parameters.position=get_global_mouse_position()
+	parameters.collide_with_areas=true
+	parameters.collision_mask=COLLISION_MASK_CARD_SLOT
+	var result=space_state.intersect_point(parameters)
+	if result.size()>0:
+		#controllo su z-index di hover
+		return result[0].collider.get_parent()
+	else:
+		return null
 
 
 func spostamento():
