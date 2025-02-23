@@ -26,7 +26,8 @@ func _input(event):
 			if carta:
 				inizio_spostamento(carta)
 		else:
-			fine_spostamento()
+			if carta_sposta:
+				fine_spostamento()
 
 func inizio_spostamento(carta):
 	carta_sposta=carta
@@ -41,7 +42,6 @@ func fine_spostamento():
 		carta_sposta.position=slot_carta_trovata.position
 		carta_sposta.get_node("Area2D/CollisionShape2D").disabled=true
 		slot_carta_trovata.carta_in_slot=true
-	
 	carta_sposta=null
 
 
@@ -82,6 +82,7 @@ func carta_maggiore_z_index(carte):
 		if carta_corrente.z_index>maggiore_z_index:
 			maggiore_z_index=carta_corrente.z_index
 			carta_maggiore_z=carta_corrente
+	print(carta_maggiore_z)
 	return carta_maggiore_z
 
 func connetti_carta(carta):
