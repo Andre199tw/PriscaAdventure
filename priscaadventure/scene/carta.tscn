@@ -12,17 +12,17 @@ position = Vector2(168, 146)
 script = ExtResource("1_03c74")
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(18, -22)
+position = Vector2(-0.0349998, -27.02)
 scale = Vector2(1.547, 1.547)
 texture = ExtResource("1_qfeqn")
 
 [node name="CartaBordo" type="Sprite2D" parent="."]
-position = Vector2(18, 4)
+position = Vector2(-0.035, -0.02)
 scale = Vector2(0.19422, 0.19422)
 texture = ExtResource("2_4th67")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(21, 2)
+position = Vector2(-0.035, -0.02)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false

@@ -5,11 +5,12 @@ const COLLISION_MASK_CARD_SLOT=2
 var carta_sposta=null
 var dim_screen
 var is_hover_carta
-
+var mano_reference
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	dim_screen=get_viewport_rect().size
+	mano_reference=$"../Mano"
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -39,9 +40,12 @@ func fine_spostamento():
 	var slot_carta_trovata = spostamento_slot()
 	#se non c'è nessuna carta nello slot n allora la inserisce
 	if slot_carta_trovata and not slot_carta_trovata.carta_in_slot:
+		mano_reference.rimuovi_carta(carta_sposta)
 		carta_sposta.position=slot_carta_trovata.position
 		carta_sposta.get_node("Area2D/CollisionShape2D").disabled=true
 		slot_carta_trovata.carta_in_slot=true
+	else:
+		mano_reference.aggiungi_carta(carta_sposta)
 	carta_sposta=null
 
 

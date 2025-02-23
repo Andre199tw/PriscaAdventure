@@ -21,13 +21,17 @@ func _ready() -> void:
 		aggiungi_carta(nuova_carta)
 
 func aggiungi_carta(carta):
-	mano.insert(0,carta)
-	aggiorna_pos_mano(mano)
+	if carta not in mano:
+		mano.insert(0,carta)
+		aggiorna_pos_mano(mano)
+	else:
+		anima_carta_posizione(carta,carta.posizione_iniziale)
 
 func aggiorna_pos_mano(mano):
 	for i in range(mano.size()):
 		var nuova_posizione=Vector2(calcola_posizione_carta(i), POSIZIONE_Y_MANO)
 		var carta=mano[i]
+		carta.posizione_iniziale= nuova_posizione
 		anima_carta_posizione(carta,nuova_posizione)
 	
 
@@ -40,4 +44,8 @@ func calcola_posizione_carta(index):
 	var x_offset=center_screen_x+index*LARGHEZZA_CARTA-larghezza_totale/2
 	return x_offset
 
+func rimuovi_carta(carta):
+	if carta in mano:
+		mano.erase(carta)
+		aggiorna_pos_mano(mano)
 	

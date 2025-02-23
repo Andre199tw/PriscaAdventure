@@ -9,10 +9,15 @@
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("1_x075h")
 
-[node name="CardSlot" parent="." instance=ExtResource("4_pogle")]
-position = Vector2(184, 191)
-scale = Vector2(0.675768, 0.675768)
-
 [node name="Mano" type="Node2D" parent="."]
 position = Vector2(0, 1)
 script = ExtResource("5_aikq4")
+
+[node name="CardSlot" parent="." instance=ExtResource("4_pogle")]
+position = Vector2(701, 197)
+
+[node name="CardSlot2" parent="." instance=ExtResource("4_pogle")]
+position = Vector2(950, 196)
+
+[node name="CardSlot3" parent="." instance=ExtResource("4_pogle")]
+position = Vector2(446, 198)
