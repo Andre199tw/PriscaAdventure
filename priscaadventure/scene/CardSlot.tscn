@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpycidp10ybim"]
 
-[ext_resource type="Script" path="res://card_slot.gd" id="1_mgwe6"]
-[ext_resource type="Texture2D" uid="uid://dnuqkmrhriypn" path="res://Tornioduva's basic card game asset pack/scifi card/scifi empty card section.png" id="1_x6xvr"]
+[ext_resource type="Script" path="res://Scripts/card_slot.gd" id="1_mgwe6"]
+[ext_resource type="Texture2D" uid="uid://dnuqkmrhriypn" path="res://Assets/Tornioduva's basic card game asset pack/scifi card/scifi empty card section.png" id="1_x6xvr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ae7g"]
 size = Vector2(256, 353)
