@@ -14,8 +14,6 @@ func _ready() -> void:
 		disegna_carta();
 
 
-
-
 func disegna_carta(n=1):
 	var carta_uscita=deck_giocatore[0]
 	
@@ -27,6 +25,7 @@ func disegna_carta(n=1):
 			$"../CardManager".add_child(nuova_carta)
 			nuova_carta.name = "Carta"
 			$"../Mano".aggiungi_carta(nuova_carta, speed)
+			nuova_carta.get_node("AnimationPlayer").play("Card_Flip")
 			print("rantu merda")
 		else:
 			break
