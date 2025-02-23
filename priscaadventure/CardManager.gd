@@ -2,7 +2,7 @@ extends Node2D
 
 const COLLISION_MASK_CARD=1
 const COLLISION_MASK_CARD_SLOT=2
-var carta_sposta
+var carta_sposta=null
 var dim_screen
 var is_hover_carta
 
@@ -41,6 +41,7 @@ func fine_spostamento():
 		carta_sposta.position=slot_carta_trovata.position
 		carta_sposta.get_node("Area2D/CollisionShape2D").disabled=true
 		slot_carta_trovata.carta_in_slot=true
+	
 	carta_sposta=null
 
 
