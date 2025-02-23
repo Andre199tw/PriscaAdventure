@@ -14,6 +14,7 @@ var center_screen_x
 func _ready() -> void:
 	center_screen_x=get_viewport().size.x/2
 	
+	
 func aggiungi_carta(carta, speed):
 	if carta not in mano:
 		mano.insert(0,carta)

@@ -36,8 +36,8 @@ func spostamento_deck(n):
 			var carta_sposta=result[0].collider.get_parent()
 			if carta_sposta:
 				card_manager_reference.inizio_spostamento(carta_sposta)
-		elif res_collision_mask == COLLISION_MASK_DECK:
-			deck_reference.disegna_carta(n)
+		#elif res_collision_mask == COLLISION_MASK_DECK:
+			#deck_reference.disegna_carta(n)
 			
 	else:
 		return null

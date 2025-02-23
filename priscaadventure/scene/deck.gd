@@ -2,7 +2,7 @@ extends Node2D
 
 
 const CARTA_SCENA_PATH = "res://scene/carta.tscn"
-var deck_giocatore=["RantuBase", "CezarBase","AndreBase"]#, "AngeloBase","RisiBase"]
+var deck_giocatore=["RantuBase", "CezarBase","AndreBase", "AngeloBase","RisiBase"]
 var CardDB_reference
 var speed=0.3
 # Called when the node enters the scene tree for the first time.
@@ -10,6 +10,8 @@ func _ready() -> void:
 	deck_giocatore.shuffle()
 	$Area2D/RichTextLabel.text=str(deck_giocatore.size())
 	CardDB_reference=preload("res://Scripts/CardDB.gd")
+	for i in range(3):
+		disegna_carta();
 
 
 
