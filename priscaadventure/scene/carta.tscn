@@ -1,15 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqncy0ma01jjk"]
+[gd_scene load_steps=8 format=3 uid="uid://bqncy0ma01jjk"]
 
 [ext_resource type="Script" path="res://Scripts/carta.gd" id="1_03c74"]
-[ext_resource type="Texture2D" uid="uid://bwcr1ljbrx6ya" path="res://Assets/rantu.png" id="1_qfeqn"]
+[ext_resource type="Texture2D" uid="uid://bwcr1ljbrx6ya" path="res://Assets/immaginiCarte/RantuBase.png" id="1_qfeqn"]
+[ext_resource type="Texture2D" uid="uid://cxsxfdwtrlwix" path="res://Assets/Tornioduva's basic card game asset pack/fantasy card/card fantasy back.png" id="2_4a5fe"]
 [ext_resource type="Texture2D" uid="uid://cpbffx050ldqd" path="res://Assets/Tornioduva's basic card game asset pack/fantasy card/card fantasy golden.png" id="2_4th67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysl6x"]
 size = Vector2(145, 202)
 
+[sub_resource type="Animation" id="Animation_sndbo"]
+resource_name = "Card_Flip"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_apypg"]
+_data = {
+"Card_Flip": SubResource("Animation_sndbo")
+}
+
 [node name="Carta1" type="Node2D"]
-position = Vector2(168, 146)
+position = Vector2(150, 890)
 script = ExtResource("1_03c74")
+
+[node name="RetroCarta" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(98, 2.88486e-05)
+scale = Vector2(0.194, 0.194)
+texture = ExtResource("2_4a5fe")
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(-0.0349998, -27.02)
@@ -28,6 +44,45 @@ position = Vector2(-0.035, -0.02)
 visible = false
 position = Vector2(17.5, 4)
 shape = SubResource("RectangleShape2D_ysl6x")
+
+[node name="Attacco" type="RichTextLabel" parent="."]
+self_modulate = Color(0.897958, 0, 0.0337761, 1)
+offset_left = -54.0
+offset_top = 49.0
+offset_right = -14.0
+offset_bottom = 89.0
+text = "0"
+
+[node name="Difesa" type="RichTextLabel" parent="."]
+self_modulate = Color(1.73271e-06, 0.773102, 0.0890406, 1)
+offset_left = 47.615
+offset_top = 49.0
+offset_right = 87.615
+offset_bottom = 89.0
+text = "0"
+
+[node name="Effetto" type="RichTextLabel" parent="."]
+offset_left = -53.0
+offset_top = 78.0
+offset_right = 147.0
+offset_bottom = 116.0
+scale = Vector2(0.55, 0.55)
+text = "text"
+scroll_active = false
+
+[node name="Mana" type="RichTextLabel" parent="."]
+self_modulate = Color(0, 1, 1, 1)
+z_index = 2
+offset_left = -4.0
+offset_top = 42.0
+offset_right = 36.0
+offset_bottom = 82.0
+text = "0"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_apypg")
+}
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

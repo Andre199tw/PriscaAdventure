@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwcr1ljbrx6ya"
-path="res://.godot/imported/rantu.png-5eb696b3b642829162212d7b37cf011d.ctex"
+uid="uid://bn0vencspmc32"
+path="res://.godot/imported/AndreBase.png-33e4d3e2916b4bb19b785fa893e9711a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rantu.png"
-dest_files=["res://.godot/imported/rantu.png-5eb696b3b642829162212d7b37cf011d.ctex"]
+source_file="res://Assets/immaginiCarte/AndreBase.png"
+dest_files=["res://.godot/imported/AndreBase.png-33e4d3e2916b4bb19b785fa893e9711a.ctex"]
 
 [params]
 

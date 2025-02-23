@@ -6,13 +6,13 @@ var carta_sposta=null
 var dim_screen
 var is_hover_carta
 var mano_reference
-
+var speed=0.3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	dim_screen=get_viewport_rect().size
 	mano_reference=$"../Mano"
 	$"../InputManager".connect("left_mouse_button_released", left_released)
-	$"../Deck".disegna_carta(4)
+	#$"../Deck".disegna_carta(1)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -47,7 +47,7 @@ func fine_spostamento():
 		carta_sposta.get_node("Area2D/CollisionShape2D").disabled=true
 		slot_carta_trovata.carta_in_slot=true
 	else:
-		mano_reference.aggiungi_carta(carta_sposta)
+		mano_reference.aggiungi_carta(carta_sposta,speed)
 	carta_sposta=null
 
 
