@@ -14,7 +14,7 @@ func _ready() -> void:
 	CardDB_reference = preload("res://Scripts/CardDB.gd")
 	for i in range(starting_cards_n):
 		pesca_carta()
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.6).timeout
 
 
 func pesca_carta(n: int = 1) -> void:
@@ -27,8 +27,9 @@ func pesca_carta(n: int = 1) -> void:
 			set_carta(nuova_carta, carta_uscita)
 			$"../CardManager".add_child(nuova_carta)
 			nuova_carta.name = "Carta"
+			nuova_carta.get_node("AnimationPlayer").play("Draw_Card")
+			await get_tree().create_timer(0.3).timeout
 			$"../Mano".aggiungi_carta(nuova_carta, speed)
-			nuova_carta.get_node("AnimationPlayer").play("Card_Flip")
 			print("rantu merda")
 		else:
 			break
