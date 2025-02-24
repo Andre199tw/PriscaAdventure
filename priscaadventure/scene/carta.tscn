@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqncy0ma01jjk"]
+[gd_scene load_steps=11 format=3 uid="uid://bqncy0ma01jjk"]
 
 [ext_resource type="Script" path="res://Scripts/carta.gd" id="1_03c74"]
 [ext_resource type="Texture2D" uid="uid://bwcr1ljbrx6ya" path="res://Assets/immaginiCarte/RantuBase.png" id="1_qfeqn"]
 [ext_resource type="Texture2D" uid="uid://cxsxfdwtrlwix" path="res://Assets/Tornioduva's basic card game asset pack/fantasy card/card fantasy back.png" id="2_4a5fe"]
 [ext_resource type="Texture2D" uid="uid://cpbffx050ldqd" path="res://Assets/Tornioduva's basic card game asset pack/fantasy card/card fantasy golden.png" id="2_4th67"]
+[ext_resource type="FontFile" uid="uid://bmwt0xy6y63ea" path="res://Assets/fonts/PixelifySans-Regular.ttf" id="5_q3tkh"]
+[ext_resource type="FontFile" uid="uid://b3yadss8jii1i" path="res://Assets/fonts/PixelifySans-Bold.ttf" id="6_sl14u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysl6x"]
 size = Vector2(145, 202)
@@ -293,30 +295,39 @@ shape = SubResource("RectangleShape2D_ysl6x")
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(0.897958, 0, 0.0337761, 1)
 z_index = 2
-offset_left = -54.0
+texture_filter = 1
+offset_left = -58.0
 offset_top = 49.0
-offset_right = -14.0
-offset_bottom = 89.0
+offset_right = -32.0
+offset_bottom = 73.0
+theme_override_fonts/normal_font = ExtResource("5_q3tkh")
+theme_override_fonts/bold_font = ExtResource("6_sl14u")
 text = "0"
 
 [node name="Difesa" type="RichTextLabel" parent="."]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1.73271e-06, 0.773102, 0.0890406, 1)
 z_index = 2
-offset_left = 47.615
+texture_filter = 1
+offset_left = 46.0
 offset_top = 49.0
-offset_right = 87.615
-offset_bottom = 89.0
+offset_right = 71.0
+offset_bottom = 73.0
+theme_override_fonts/normal_font = ExtResource("5_q3tkh")
+theme_override_fonts/bold_font = ExtResource("6_sl14u")
 text = "0"
 
 [node name="Effetto" type="RichTextLabel" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 2
-offset_left = -53.0
-offset_top = 78.0
-offset_right = 147.0
-offset_bottom = 116.0
+texture_filter = 1
+offset_left = -55.0
+offset_top = 79.0
+offset_right = 145.0
+offset_bottom = 110.0
 scale = Vector2(0.55, 0.55)
+theme_override_fonts/normal_font = ExtResource("5_q3tkh")
+theme_override_fonts/bold_font = ExtResource("6_sl14u")
 text = "text"
 scroll_active = false
 
@@ -324,10 +335,13 @@ scroll_active = false
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(0, 1, 1, 1)
 z_index = 2
-offset_left = -4.0
-offset_top = 42.0
-offset_right = 36.0
-offset_bottom = 82.0
+texture_filter = 1
+offset_left = -5.0
+offset_top = 44.0
+offset_right = 35.0
+offset_bottom = 84.0
+theme_override_fonts/normal_font = ExtResource("5_q3tkh")
+theme_override_fonts/bold_font = ExtResource("6_sl14u")
 text = "0"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
