@@ -46,10 +46,12 @@ func inizio_spostamento(carta):
 func fine_spostamento():
 	carta_sposta.scale = Vector2(1.2, 1.2)
 	var slot_carta_trovata = spostamento_slot()
+	print(slot_carta_trovata.position)
 	#se non c'è nessuna carta nello slot n allora la inserisce
 	if slot_carta_trovata and not slot_carta_trovata.carta_in_slot:
 		mano_reference.rimuovi_carta(carta_sposta)
 		carta_sposta.position = slot_carta_trovata.position
+		print(carta_sposta.position)
 		carta_sposta.get_node("Area2D/CollisionShape2D").disabled = true
 		slot_carta_trovata.carta_in_slot = true
 	else:

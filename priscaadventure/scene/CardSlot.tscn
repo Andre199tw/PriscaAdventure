@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dnuqkmrhriypn" path="res://Assets/Tornioduva's basic card game asset pack/scifi card/scifi empty card section.png" id="1_x6xvr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ae7g"]
-size = Vector2(256, 353)
+size = Vector2(167.5, 235)
 
 [node name="CardSlot" type="Node2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_mgwe6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,6 +19,6 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(-1, -0.5)
+position = Vector2(-1.25, 4.76837e-06)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6ae7g")
