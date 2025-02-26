@@ -1,6 +1,6 @@
 extends Node2D
 
-const CARTA_SCENA_PATH = "res://scene/carta.tscn"
+const CARTA_SCENA_PATH = "res://scene/cartaAvversario.tscn"
 const starting_cards_n = 3
 var deck_giocatore1 = ["RantuBase", "CezarBase", "AndreBase", "AngeloBase", "RisiBase"]
 var turno=false
@@ -32,11 +32,11 @@ func pesca_carta(n: int = 1) -> void:
 		if deck_giocatore1:
 			var nuova_carta = carta_scena.instantiate()
 			set_carta(nuova_carta, carta_uscita)
-			$"../../CardManager".add_child(nuova_carta)
+			$"../CardManager".add_child(nuova_carta)
 			nuova_carta.name = "Carta"
 			nuova_carta.get_node("AnimationPlayer").play("Draw_Card")
 			await get_tree().create_timer(0.3).timeout
-			$"../../ManoAvversario".aggiungi_carta(nuova_carta, speed)
+			$"../ManoAvversario".aggiungi_carta(nuova_carta, speed)
 			print("rantu merda")
 			turno=true
 		else:

@@ -28,6 +28,7 @@ func turno_avversario():
 	$"../fine turno".disabled=true
 	$"../fine turno".visible=false
 	
+	#aggiungere in BM diramificazione per giocatore 1 o 2
 	$"../Avversario".pesca_carta()
 	
 	battle_timer.start()

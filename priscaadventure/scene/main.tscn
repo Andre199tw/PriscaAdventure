@@ -102,33 +102,31 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Avversario" type="Node2D" parent="."]
-
-[node name="Deck" type="Node2D" parent="Avversario"]
-position = Vector2(1812, 118)
+[node name="DeckAvversario" type="Node2D" parent="."]
+position = Vector2(1780, 115)
 script = ExtResource("10_afwgh")
 
-[node name="textbase" type="Sprite2D" parent="Avversario/Deck"]
+[node name="textbase" type="Sprite2D" parent="DeckAvversario"]
 position = Vector2(0, 125)
 rotation = 3.14159
 scale = Vector2(0.07, -0.03)
 texture = ExtResource("5_a32ut")
 
-[node name="Sprite2D" type="Sprite2D" parent="Avversario/Deck"]
+[node name="Sprite2D" type="Sprite2D" parent="DeckAvversario"]
 z_index = -2
 position = Vector2(-3.05176e-05, 0)
 scale = Vector2(0.194, 0.194)
 texture = ExtResource("4_x7wpd")
 
-[node name="Area2D" type="Area2D" parent="Avversario/Deck"]
+[node name="Area2D" type="Area2D" parent="DeckAvversario"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Avversario/Deck/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeckAvversario/Area2D"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_f4l58")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Avversario/Deck/Area2D"]
+[node name="RichTextLabel" type="RichTextLabel" parent="DeckAvversario/Area2D"]
 self_modulate = Color(0.839362, 0.895781, 0, 1)
 offset_left = -7.0
 offset_top = 110.0
