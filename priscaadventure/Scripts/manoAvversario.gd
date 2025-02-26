@@ -1,9 +1,9 @@
 extends Node2D
 
 const LARGHEZZA_CARTA = 200
-const POSIZIONE_Y_MANO = 890
+const POSIZIONE_Y_MANO = 0
 
-var speed_mano = 0.5
+var speed_mano = 0.5 
 
 var mano = []
 var indicemano = 0
